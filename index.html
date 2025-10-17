@@ -405,6 +405,20 @@
         });
         // --- END FILTER AND STATS LOGIC ---
 
+        // --- START LOGO CONTROL ---
+        var logoControl = L.control({ position: 'bottomleft' });
+
+        logoControl.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'logo-control');
+            div.innerHTML = '<img src="images/logo.png" alt="Logo">' +
+                            '<p>Réalisé par Drone Tegnology Engineering</p>';
+            L.DomEvent.disableClickPropagation(div);
+            return div;
+        };
+
+        logoControl.addTo(map);
+        // --- END LOGO CONTROL ---
+
         setBounds();
         var i = 0;
         layer_Parcelles_bloc120_3.eachLayer(function(layer) {

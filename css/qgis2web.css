@@ -325,3 +325,41 @@
 #filter-control #stats p {
     margin: 5px 0;
 }
+
+/* Logo Control Styling */
+.logo-control {
+    /* This is the inner div, we can style it if needed, but we want it clean */
+}
+
+.logo-control img {
+    width: 150px;
+    height: auto;
+}
+
+.logo-control p {
+    margin: 2px 0 0 0;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2px 4px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* This targets the container Leaflet creates for our control */
+.leaflet-bottom.leaflet-left .logo-control.leaflet-control {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .logo-control img {
+        width: 40px;
+    }
+    .logo-control p {
+        font-size: 8px;
+        padding: 1px 2px;
+    }
+}
