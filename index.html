@@ -387,7 +387,7 @@
                 var area = layer.feature.properties.superficie;
 
                 if (selectedCulture === 'all' || culture === selectedCulture) {
-                    layer.setStyle({ opacity: 1, fillOpacity: 0.2 }); // Show layer
+                    layer.setStyle({ opacity: 1, fillOpacity: 0.1 }); // Show layer
                     if (!map.hasLayer(layer)) {
                         map.addLayer(layer);
                     }
