@@ -381,21 +381,26 @@
         filterSelect.addEventListener('change', function() {
             var selectedCulture = this.value;
             var visibleArea = 0;
+            var visibleLayers = [];
 
             layer_Parcelles_bloc120_3.eachLayer(function(layer) {
                 var culture = layer.feature.properties.nom;
                 var area = layer.feature.properties.superficie;
 
                 if (selectedCulture === 'all' || culture === selectedCulture) {
-                    layer.setStyle({ opacity: 1, fillOpacity: 0.1 }); // Show layer
-                    if (!map.hasLayer(layer)) {
-                        map.addLayer(layer);
-                    }
+                    layer.setStyle({ opacity: 1, fillOpacity: 0.1 });
                     visibleArea += area;
+                    visibleLayers.push(layer);
                 } else {
-                    layer.setStyle({ opacity: 0, fillOpacity: 0 }); // Hide layer
+                    layer.setStyle({ opacity: 0, fillOpacity: 0 });
                 }
             });
+
+            if (visibleLayers.length > 0) {
+                var group = new L.featureGroup(visibleLayers);
+                map.fitBounds(group.getBounds());
+            }
+
             document.getElementById('stats-visible').textContent = visibleArea.toFixed(2);
         });
         // --- END FILTER AND STATS LOGIC ---
