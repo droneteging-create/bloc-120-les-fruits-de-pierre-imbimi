@@ -92,7 +92,7 @@
             return this._div;
         };
         title.update = function () {
-            this._div.innerHTML = '<h2>VISUALISATION DU BLOC 120 (110 Ha)</h2>';
+            this._div.innerHTML = '<h4>VISUALISATION DU BLOC 120 (110 Ha)</h4>';
         };
         title.addTo(map);
         var abstract = new L.Control({'position':'topright'});
@@ -402,6 +402,7 @@
             }
 
             document.getElementById('stats-visible').textContent = visibleArea.toFixed(2);
+            resetLabels([layer_Parcelles_bloc120_3,layer_Infrastructures_4]);
         });
         // --- END FILTER AND STATS LOGIC ---
 
