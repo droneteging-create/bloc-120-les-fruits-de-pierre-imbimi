@@ -1,5 +1,4 @@
-
-        #map {
+#map {
             background-color: #ffffff
         }
         html, body, #map {
@@ -22,6 +21,13 @@
         }
         .info h2 {
             margin: 0 0 5px;
+        }
+        .map-subtitle {
+            font-size: 10px;
+            color: #555;
+            margin-top: 5px;
+            margin-bottom: 0;
+            text-align: center;
         }
         .leaflet-container {
             background: #fff;
@@ -354,7 +360,24 @@
     box-shadow: none;
 }
 
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
+            .info {
+                padding: 4px 6px;
+            }
+            .info h4 {
+                font-size: 12px;
+                margin: 0;
+            }
+            #filter-control {
+                width: 200px;
+                padding: 8px;
+            }
+            #filter-control h4 {
+                font-size: 1rem;
+            }
+            #filter-control #stats {
+                font-size: 0.8rem;
+            }
     .logo-control img {
         width: 40px;
     }

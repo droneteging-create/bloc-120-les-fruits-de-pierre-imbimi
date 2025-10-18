@@ -23,7 +23,7 @@
             margin: 0;
         }
         </style>
-        <title>VISUALISATION DU BLOC 120 (110 Ha)</title>
+        <title>BLOC 120 (110 Ha)</title>
     </head>
     <body>
         <div id="map">
@@ -92,7 +92,7 @@
             return this._div;
         };
         title.update = function () {
-            this._div.innerHTML = '<h4>VISUALISATION DU BLOC 120 (110 Ha)</h4>';
+            this._div.innerHTML = '<h4>BLOC 120 (110 Ha)</h4><p class="map-subtitle">Plantation Les Fruits de Pierre</p>';
         };
         title.addTo(map);
         var abstract = new L.Control({'position':'topright'});
@@ -100,8 +100,8 @@
             this._div = L.DomUtil.create('div',
             'leaflet-control abstract');
             this._div.id = 'abstract'
-                this._div.setAttribute("onmouseenter", "abstract.show()");
-                this._div.setAttribute("onmouseleave", "abstract.hide()");
+                this._div.setAttribute("onmouseenter", "abstract.show()")
+                this._div.setAttribute("onmouseleave", "abstract.hide()")
                 this.hide();
                 return this._div;
             };
@@ -130,7 +130,7 @@
         measureControl.addTo(map);
         document.getElementsByClassName('leaflet-control-measure-toggle')[0].innerHTML = '';
         document.getElementsByClassName('leaflet-control-measure-toggle')[0].className += ' fas fa-ruler';
-        var bounds_group = new L.featureGroup([]);
+        var bounds_group = new L.featureGroup ([]);
         function setBounds() {
         }
         map.createPane('pane_Esri_0');
@@ -168,13 +168,13 @@
                 },
                 mouseover: highlightFeature,
             });
-            var popupContent = '<div class="card" style="width: 18rem; border: none; background: none;">' +
-                                '<div class="card-header"><strong>Bloc</strong></div>' +
-                                '<ul class="list-group list-group-flush">' +
-                                    '<li class="list-group-item" style="background: none;"><strong>ID:</strong><br />' + (feature.properties['id'] || 'N/A') + '</li>' +
-                                    '<li class="list-group-item" style="background: none;"><strong>Nom:</strong><br />' + (feature.properties['nom'] || 'N/A') + '</li>' +
-                                '</ul>' +
-                            '</div>';
+            var popupContent = '<div class="card" style="width: 18rem; border: none; background: none;">'
+                                +'<div class="card-header"><strong>Bloc</strong></div>'
+                                +'<ul class="list-group list-group-flush">'
+                                    +'<li class="list-group-item" style="background: none;"><strong>ID:</strong><br />' + (feature.properties['id'] || 'N/A') + '</li>'
+                                    +'<li class="list-group-item" style="background: none;"><strong>Nom:</strong><br />' + (feature.properties['nom'] || 'N/A') + '</li>'
+                                +'</ul>'
+                            +'</div>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
@@ -222,13 +222,13 @@
                 },
                 mouseover: highlightFeature,
             });
-            var popupContent = '<div class="card" style="width: 18rem; border: none; background: none;">' +
-                                '<div class="card-header"><strong>Parcelle</strong></div>' +
-                                '<ul class="list-group list-group-flush">' +
-                                    '<li class="list-group-item" style="background: none;"><strong>Type de fruit:</strong><br />' + (feature.properties['nom'] || 'N/A') + '</li>' +
-                                    '<li class="list-group-item" style="background: none;"><strong>Superficie (Ha):</strong><br />' + (feature.properties['superficie'] || 'N/A') + '</li>' +
-                                '</ul>' +
-                            '</div>';
+            var popupContent = '<div class="card" style="width: 18rem; border: none; background: none;">'
+                                +'<div class="card-header"><strong>Parcelle</strong></div>'
+                                +'<ul class="list-group list-group-flush">'
+                                    +'<li class="list-group-item" style="background: none;"><strong>Type de fruit:</strong><br />' + (feature.properties['nom'] || 'N/A') + '</li>'
+                                    +'<li class="list-group-item" style="background: none;"><strong>Superficie (Ha):</strong><br />' + (feature.properties['superficie'] || 'N/A') + '</li>'
+                                +'</ul>'
+                            +'</div>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
@@ -276,12 +276,12 @@
                 },
                 mouseover: highlightFeature,
             });
-            var popupContent = '<div class="card" style="width: 18rem; border: none; background: none;">' +
-                                '<div class="card-header"><strong>Infrastructure</strong></div>' +
-                                '<ul class="list-group list-group-flush">' +
-                                    '<li class="list-group-item" style="background: none;"><strong>Nom:</strong><br />' + (feature.properties['nom'] || 'N/A') + '</li>' +
-                                '</ul>' +
-                            '</div>';
+            var popupContent = '<div class="card" style="width: 18rem; border: none; background: none;">'
+                                +'<div class="card-header"><strong>Infrastructure</strong></div>'
+                                +'<ul class="list-group list-group-flush">'
+                                    +'<li class="list-group-item" style="background: none;"><strong>Nom:</strong><br />' + (feature.properties['nom'] || 'N/A') + '</li>'
+                                +'</ul>'
+                            +'</div>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
